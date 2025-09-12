@@ -34,6 +34,11 @@ Each notebook builds on the previous one, showing a step-by-step workflow from r
 - Plot **feature importances**
 - Save the best model → `ml_projects/models/best_model.joblib`
 
+### 5. `pandas_intro_part5.ipynb`
+- Compare all three models (**Logistic Regression, RandomForest, GradientBoosting**)
+- Plot bar charts for **Accuracy** and **Macro-F1** on test set
+- Summarize results in a DataFrame
+
 ---
 
 ## What this shows
@@ -41,4 +46,4 @@ Each notebook builds on the previous one, showing a step-by-step workflow from r
 - Ability to **handle missing data, feature engineering, scaling**
 - Experience with **ML pipelines** (sklearn)
 - Understanding of **evaluation metrics** (accuracy, F1, confusion matrix)
-- End-to-end workflow: **EDA → preprocessing → modeling → saving model**
+- End-to-end workflow: **EDA → preprocessing → modeling → evaluation → model saving**
