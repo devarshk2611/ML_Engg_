@@ -35,9 +35,15 @@ Each notebook builds on the previous one, showing a step-by-step workflow from r
 - Save the best model → `ml_projects/models/best_model.joblib`
 
 ### 5. `pandas_intro_part5.ipynb`
-- Compare all three models (**Logistic Regression, RandomForest, GradientBoosting**)
-- Plot bar charts for **Accuracy** and **Macro-F1** on test set
-- Summarize results in a DataFrame
+- Combined RandomForest & GradientBoosting
+- Compared Accuracy & Macro-F1 side-by-side
+- Plotted results for easier interpretation
+
+### 6. `pandas_intro_part6.ipynb`
+- Added **5-fold cross-validation** for Logistic Regression, RandomForest, and GradientBoosting
+- Evaluated **Accuracy + Macro-F1 (mean ± std)**
+- Visualized **learning curve** for RandomForest (training vs validation accuracy)
+- Shows **model stability** and bias/variance tradeoff
 
 ---
 
