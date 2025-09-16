@@ -45,6 +45,11 @@ Each notebook builds on the previous one, showing a step-by-step workflow from r
 - Visualized **learning curve** for RandomForest (training vs validation accuracy)
 - Shows **model stability** and bias/variance tradeoff
 
+### 7. `pandas_intro_part7.ipynb`
+- Introduced **sklearn Pipelines** and **ColumnTransformer**
+- Scaled numeric features, **one-hot encoded** a categorical bucket
+- Trained **Logistic Regression** and **RandomForest** inside pipelines
+- Reported **Accuracy** and **Macro-F1**
 ---
 
 ## What this shows
