@@ -1,60 +1,66 @@
-# ML Projects
+# Machine Learning Projects
 
-This folder contains my **learning + demo projects** for data analysis and machine learning.  
-Each notebook builds on the previous one, showing a step-by-step workflow from raw data to a trained model.
+This folder contains my hands-on machine learning projects, organized to demonstrate
+both **foundational learning** and **end-to-end applied ML workflows**.
 
 ---
 
-## Project: Iris Dataset (Step-by-Step)
+## 📘 Iris Classification (Learning Project)
 
-### 1. `pandas_intro.ipynb`
-- Load the Iris dataset into Pandas
-- Explore dataset with `.head()`, `.info()`, `.describe()`
-- Groupby examples
-- Basic histograms & scatterplots
+**Folder:** `iris/`
 
-### 2. `pandas_intro_part2.ipynb`
-- Handle **missing values** (drop vs mean imputation)
-- Add **feature engineering**: sepal_area, petal_area
-- Apply **scaling** (StandardScaler)
-- Extra plots: boxplot & scatter
-- Demonstrate **joins/merges** with employees/departments demo tables
-- Save a cleaned dataset: `iris_cleaned_engineered.csv`
+This project documents my step-by-step learning of the complete machine learning pipeline
+using the Iris dataset.
 
-### 3. `pandas_intro_part3.ipynb`
-- Train/test split
-- Train a **Logistic Regression classifier**
-- Evaluate with **accuracy** and **confusion matrix**
-- Inspect **coefficients/feature importance**
+### Covered Topics
+- Exploratory Data Analysis (EDA) with Pandas
+- Data cleaning and preprocessing
+- Feature engineering
+- Scaling and transformations
+- Logistic Regression
+- Tree-based models
+- Model evaluation and comparison
+- Basic inference scripting
 
-### 4. `pandas_intro_part4.ipynb`
-- Compare **RandomForestClassifier** vs **GradientBoostingClassifier**
-- Use **GridSearchCV** with Macro-F1 scoring
-- Evaluate on test set (accuracy + F1 + confusion matrices)
-- Plot **feature importances**
-- Save the best model → `ml_projects/models/best_model.joblib`
+**Purpose:**  
+Build strong fundamentals in data preparation, modeling, and evaluation.
 
-### 5. `pandas_intro_part5.ipynb`
-- Combined RandomForest & GradientBoosting
-- Compared Accuracy & Macro-F1 side-by-side
-- Plotted results for easier interpretation
-
-### 6. `pandas_intro_part6.ipynb`
-- Added **5-fold cross-validation** for Logistic Regression, RandomForest, and GradientBoosting
-- Evaluated **Accuracy + Macro-F1 (mean ± std)**
-- Visualized **learning curve** for RandomForest (training vs validation accuracy)
-- Shows **model stability** and bias/variance tradeoff
-
-### 7. `pandas_intro_part7.ipynb`
-- Introduced **sklearn Pipelines** and **ColumnTransformer**
-- Scaled numeric features, **one-hot encoded** a categorical bucket
-- Trained **Logistic Regression** and **RandomForest** inside pipelines
-- Reported **Accuracy** and **Macro-F1**
 ---
 
-## What this shows
-- Strong **data wrangling with Pandas**
-- Ability to **handle missing data, feature engineering, scaling**
-- Experience with **ML pipelines** (sklearn)
-- Understanding of **evaluation metrics** (accuracy, F1, confusion matrix)
-- End-to-end workflow: **EDA → preprocessing → modeling → evaluation → model saving**
+## 🚀 Customer Churn Prediction (Applied ML Project)
+
+**Folder:** `customer_churn/`  
+**Data:** `data/customer_churn*.csv`
+
+This is an end-to-end machine learning project focused on predicting customer churn.
+It is designed to reflect real-world ML engineering workflows.
+
+### Workflow
+- Exploratory Data Analysis (EDA)
+- Data cleaning and validation
+- Feature engineering
+- Handling class imbalance using SMOTE
+- Train-test splitting
+- Model training and evaluation (Logistic Regression, Random Forest)
+- Performance metrics: Accuracy, Precision, Recall, F1-score
+- Model persistence for deployment
+
+**Purpose:**  
+Demonstrate applied machine learning, model lifecycle understanding, and production readiness.
+
+---
+
+## 📂 Data & Models
+
+- All datasets are stored in the `data/` directory
+- Trained models are saved using `joblib` for reuse and deployment
+- Project structure follows clean separation of data, code, and notebooks
+
+---
+
+## 🧠 Tools & Technologies
+- Python
+- Pandas, NumPy
+- scikit-learn
+- Jupyter Notebooks
+- Git / GitHub
