@@ -1,108 +1,103 @@
-\# Customer Churn Prediction
+# Customer Churn Prediction (End-to-End ML Pipeline)
 
-
-
-End-to-end machine learning project to predict customer churn using structured customer data.
-
-
+Predict whether a customer will churn using structured customer/account data.  
+This project demonstrates a **production-minded ML workflow**: EDA → preprocessing → model training/evaluation → model persistence → CLI-based batch inference.
 
 ---
 
-
-
-\## Problem Statement
-
-Customer churn has a direct impact on business revenue.  
-
-The goal of this project is to build and evaluate machine learning models that can accurately
-
-identify customers likely to churn.
-
-
+## Project Highlights
+- Built a complete churn prediction pipeline with **clean separation** between data prep, modeling, and inference
+- Addressed **class imbalance** with appropriate evaluation (Precision/Recall/F1 + Confusion Matrix)
+- Persisted trained model (`joblib`) and created a **CLI inference script** (`predict.py`) for batch predictions
 
 ---
 
+## Repository Structure
+customer_churn/
+├── churn_part1_eda.ipynb
+├── churn_part2_preprocessing.ipynb
+├── churn_part3_modeling.ipynb
+├── predict.py
+├── models/
+│ └── customer_churn_rf.joblib
+└── README.md
 
 
-\## Workflow
-
-\- Exploratory Data Analysis (EDA)
-
-\- Data cleaning and preprocessing
-
-\- Feature engineering
-
-\- Handling class imbalance
-
-\- Model training and evaluation
-
-\- Model persistence for inference
-
-
+**Datasets (stored in `ml_projects/data/`):**
+- `customer_churn.csv` (raw)
+- `customer_churn_cleaned.csv` (cleaned)
+- `customer_churn_preprocessed.csv` (final model-ready features)
 
 ---
 
-
-
-\## Models Trained
-
-\- \*\*Logistic Regression\*\* (baseline, interpretable)
-
-\- \*\*Random Forest\*\* (non-linear, stronger performance)
-
-
+## Problem & Target
+- **Goal:** Identify customers likely to churn so a business can prioritize retention
+- **Target column:** `Churn` (binary)
 
 ---
 
+## Workflow
 
+### 1) EDA — `churn_part1_eda.ipynb`
+- Basic inspection, missingness checks
+- Target distribution (churn vs non-churn)
+- Feature-level analysis (categorical + numeric)
+- Notes on potential drivers of churn
 
-\## Evaluation Metrics
+### 2) Preprocessing — `churn_part2_preprocessing.ipynb`
+- Cleaned data and standardized column formats
+- Encoded categorical variables
+- Scaled numeric variables when needed
+- Exported final feature table:
+  - `ml_projects/data/customer_churn_preprocessed.csv`
 
-Due to class imbalance, models were evaluated using:
+### 3) Modeling — `churn_part3_modeling.ipynb`
+Trained and evaluated:
+- **Logistic Regression** (baseline)
+- **Random Forest** (non-linear model)
 
-\- Precision
+Evaluated using:
+- Precision, Recall, F1-score
+- Confusion Matrix
 
-\- Recall
-
-\- F1-score
-
-\- Confusion Matrix
-
-
-
-Random Forest achieved better recall and F1-score, making it more suitable for churn prediction.
-
-
-
----
-
-
-
-\## Key Takeaways
-
-\- Class imbalance significantly impacts churn prediction
-
-\- Tree-based models outperform linear baselines
-
-\- Feature importance helps identify key churn drivers
-
-\- Models were saved for reuse and deployment
-
-
+**Model artifact:**
+- `models/customer_churn_rf.joblib`
 
 ---
 
+## Results (Fill with your actual numbers)
 
 
-\## Tech Stack
+### Logistic Regression
+- Precision: **0.788695652173913**
+- Recall: **0.8763285024154589**
+- F1-score: **0.8302059496567505**
 
-\- Python
+### Random Forest 
+- Precision: **0.8456375838926175**
+- Recall: **0.8521739130434782**
+- F1-score: **0.848893166506256**
 
-\- Pandas, NumPy
+**Conclusion:** Random Forest performed better on churn detection (higher Recall/F1), making it more suitable for retention-focused use cases.
 
-\- scikit-learn
+---
 
-\- Jupyter Notebooks
+## Batch Inference (CLI)
 
+Run predictions on a CSV of features (must match training features).  
+If the input contains `Churn`, the script automatically drops it.
 
+From repo root:
+
+```bash
+python ml_projects/customer_churn/predict.py ^
+--input ml_projects/data/customer_churn_preprocessed.csv ^
+--output ml_projects/customer_churn/predictions.csv ^
+--model ml_projects/customer_churn/models/customer_churn_rf.joblib
+
+## Output:
+
+ml_projects/customer_churn/predictions.csv with an added column:
+
+churn_prediction
 
