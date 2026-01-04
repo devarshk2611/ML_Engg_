@@ -1,2 +1,3 @@
 ml_projects/ml_projects/
 .venv/
+ml_projects/customer_churn/predictions.csv
