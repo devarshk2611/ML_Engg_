@@ -12,7 +12,9 @@ This project demonstrates a **production-minded ML workflow**: EDA → preproces
 
 ---
 
+
 ## Repository Structure
+
 customer_churn/
 ├── churn_part1_eda.ipynb
 ├── churn_part2_preprocessing.ipynb
@@ -65,8 +67,7 @@ Evaluated using:
 
 ---
 
-## Results (Fill with your actual numbers)
-
+## Results
 
 ### Logistic Regression
 - Precision: **0.788695652173913**
