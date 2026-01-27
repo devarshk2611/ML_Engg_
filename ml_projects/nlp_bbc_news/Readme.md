@@ -2,17 +2,13 @@
 
 
 
-This project implements an *\*end-to-end NLP text classification system\*\* that automatically categorizes news articles into one of five categories.
+This project implements an **end-to-end NLP text classification system** that automatically categorizes news articles into one of five categories.
 
 
 
-The goal is to demonstrate a *\*production-style machine learning workflow\*\*, including preprocessing, model training, evaluation, model persistence, and batch inference via a command-line interface (CLI).
-
-
+The goal is to demonstrate a **production-style machine learning workflow**, including preprocessing, model training, evaluation, model persistence, and batch inference via a command-line interface (CLI).
 
 ---
-
-
 
 ## News Categories
 
@@ -22,43 +18,37 @@ The classifier predicts one of the following categories:
 
 
 
-- *\*Business\*\*
+- **Business**
 
-- *\*Entertainment\*\*
+- **Entertainment**
 
-- *\*Politics\*\*
+- **Politics**
 
-- *\*Sport\*\*
+- **Sport**
 
-- *\*Tech\*\*
-
-
+- **Tech**
 
 ---
-
 
 
 ## Project Overview
 
 
+- **Task:** Multi-class text classification
 
-- *\*Task:\*\* Multi-class text classification
+- **Dataset:** BBC News (2,225 articles across 5 categories)
 
-- *\*Dataset:\*\* BBC News (2,225 articles across 5 categories)
+- **Feature Engineering:** TF-IDF (unigrams + bigrams)
 
-- *\*Feature Engineering:\*\* TF-IDF (unigrams + bigrams)
+- **Models Trained:** Logistic Regression, Linear SVM
 
-- *\*Models Trained:\*\* Logistic Regression, Linear SVM
+- **Primary Metric:** Macro-F1
 
-- *\*Primary Metric:\*\* Macro-F1
-
-- *\*Best Model:\*\* Linear SVM (TF-IDF)
+- **Best Model:** Linear SVM (TF-IDF)
 
 ---
 
-
 ## Repository Structure
-
 
 
 ```text
@@ -130,21 +120,18 @@ nlp\_bbc\_news/
 ### 3. Modeling and Evaluation (`part3\_modeling.ipynb`)
 
 
-
 Models trained and compared:
 
 
+- **Logistic Regression (TF-IDF)**
 
-- *\*Logistic Regression (TF-IDF)\*\*
-
-- *\*Linear Support Vector Machine (TF-IDF)\*\*
-
+- **Linear Support Vector Machine (TF-IDF)**
 
 Evaluation metrics included:
 
 - Accuracy
 
-- *\*Macro-F1\*\*
+- **Macro-F1**
 
 - Confusion Matrix
 
@@ -161,11 +148,11 @@ Evaluation metrics included:
 
 | Logistic Regression (TF-IDF) | 0.9865 | 0.9861 |
 
-| *\*Linear SVM (TF-IDF)\*\* | *\*0.9888\*\* | *\*0.9882\*\* |
+| **Linear SVM (TF-IDF)** | **0.9888** | **0.9882** |
 
 
 
-*\*Selected Model:\*\* Linear SVM (TF-IDF) based on superior Macro-F1 performance.
+**Selected Model:** Linear SVM (TF-IDF) based on superior Macro-F1 performance.
 
 ---
 
@@ -195,28 +182,28 @@ python ml\_projects/nlp\_bbc\_news/predict.py \\
 
 - CSV file containing an additional column:
 
-&nbsp; - *\*predicted\_category\*\*
+&nbsp; - **predicted\_category**
 
 ---
 
 ## Technologies Used
 
 
-- *\*Python 3.12\*\*
+- **Python 3.12**
 
-- *\*pandas\*\*
+- **pandas**
 
-- *\*scikit-learn\*\*
+- **scikit-learn**
 
-- *\*TF-IDF Vectorization\*\*
+- **TF-IDF Vectorization**
 
-- *\*Linear Support Vector Machine\*\*
+- **Linear Support Vector Machine**
 
-- *\*joblib\*\*
+- **joblib**
 
-- *\*Jupyter Notebooks\*\*
+- **Jupyter Notebooks**
 
-- *\*Git / GitHub\*\*
+- **Git / GitHub**
 
 
 ---
