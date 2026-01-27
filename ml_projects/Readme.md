@@ -14,14 +14,14 @@ This project documents my **step-by-step learning of the complete machine learni
 
 ### Covered Topics
 
-- Exploratory Data Analysis (EDA) with Pandas  
-- Data cleaning and preprocessing  
-- Feature engineering  
-- Scaling and transformations  
-- Logistic Regression  
-- Tree-based models  
-- Model evaluation and comparison  
-- Basic inference scripting  
+- Exploratory Data Analysis (EDA) with Pandas
+- Data cleaning and preprocessing
+- Feature engineering
+- Scaling and transformations
+- Logistic Regression
+- Tree-based models
+- Model evaluation and comparison
+- Basic inference scripting
 
 ### Purpose
 
@@ -39,20 +39,20 @@ It is designed to reflect **real-world ML engineering workflows**.
 
 ### Workflow
 
-- Exploratory Data Analysis (EDA)  
-- Data cleaning and validation  
-- Feature engineering  
-- Handling class imbalance using **SMOTE**  
-- Train-test splitting  
+- Exploratory Data Analysis (EDA)
+- Data cleaning and validation
+- Feature engineering
+- Handling class imbalance using **SMOTE**
+- Train-test splitting
 - Model training and evaluation:
-  - Logistic Regression  
-  - Random Forest  
+  - Logistic Regression
+  - Random Forest
 - Performance metrics:
-  - Accuracy  
-  - Precision  
-  - Recall  
-  - F1-score  
-- Model persistence for deployment  
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-score
+- Model persistence for deployment
 
 ### Purpose
 
@@ -60,11 +60,38 @@ Demonstrate **applied machine learning**, understanding of the **model lifecycle
 
 ---
 
+## 📰 BBC News Text Classification (NLP Project)
+
+**Folder:** `nlp_bbc_news/`
+
+This is an **end-to-end NLP text classification project** that predicts the category of a news article using classical machine learning with TF-IDF features.
+
+### Covered Topics
+
+- Dataset exploration and class distribution analysis
+- Text preprocessing and cleaning
+- TF-IDF feature extraction (unigrams + bigrams)
+- Model training and comparison:
+  - Logistic Regression
+  - Linear SVM
+- Macro-F1 based evaluation
+- Saving a full sklearn pipeline with **joblib**
+- CLI-based batch inference using `predict.py`
+
+### Purpose
+
+Demonstrate a practical NLP workflow with:
+- strong evaluation (multi-class)
+- reproducibility (saved pipeline)
+- deployment-style inference (CLI)
+
+---
+
 ## 📂 Data and Models
 
-- All datasets are stored in the `data/` directory  
-- Trained models are saved using **joblib** for reuse and deployment  
-- Project structure follows clean separation of **data**, **code**, and **notebooks**
+- Datasets are stored in the `data/` directory (project-specific where applicable)
+- Trained models are saved using **joblib** for reuse and deployment
+- Each project follows a clean separation of **data**, **code**, and **notebooks**
 
 ---
 
@@ -73,5 +100,6 @@ Demonstrate **applied machine learning**, understanding of the **model lifecycle
 - **Python**
 - **Pandas**, **NumPy**
 - **scikit-learn**
+- **Matplotlib**
 - **Jupyter Notebooks**
 - **Git / GitHub**
