@@ -1,4 +1,4 @@
-\# BBC News Text Classification (NLP)
+# BBC News Text Classification (NLP)
 
 
 
@@ -14,7 +14,7 @@ The goal is to demonstrate a \*\*production-style machine learning workflow\*\*,
 
 
 
-\## News Categories
+## News Categories
 
 
 
@@ -22,37 +22,15 @@ The classifier predicts one of the following categories:
 
 
 
-\- \*\*Business\*\*
+- \*\*Business\*\*
 
-\- \*\*Entertainment\*\*
+- \*\*Entertainment\*\*
 
-\- \*\*Politics\*\*
+- \*\*Politics\*\*
 
-\- \*\*Sport\*\*
+- \*\*Sport\*\*
 
-\- \*\*Tech\*\*
-
-
-
----
-
-
-
-\## Project Overview
-
-
-
-\- \*\*Task:\*\* Multi-class text classification
-
-\- \*\*Dataset:\*\* BBC News (2,225 articles across 5 categories)
-
-\- \*\*Feature Engineering:\*\* TF-IDF (unigrams + bigrams)
-
-\- \*\*Models Trained:\*\* Logistic Regression, Linear SVM
-
-\- \*\*Primary Metric:\*\* Macro-F1
-
-\- \*\*Best Model:\*\* Linear SVM (TF-IDF)
+- \*\*Tech\*\*
 
 
 
@@ -60,7 +38,26 @@ The classifier predicts one of the following categories:
 
 
 
-\## Repository Structure
+## Project Overview
+
+
+
+- \*\*Task:\*\* Multi-class text classification
+
+- \*\*Dataset:\*\* BBC News (2,225 articles across 5 categories)
+
+- \*\*Feature Engineering:\*\* TF-IDF (unigrams + bigrams)
+
+- \*\*Models Trained:\*\* Logistic Regression, Linear SVM
+
+- \*\*Primary Metric:\*\* Macro-F1
+
+- \*\*Best Model:\*\* Linear SVM (TF-IDF)
+
+---
+
+
+## Repository Structure
 
 
 
@@ -95,34 +92,28 @@ nlp\_bbc\_news/
 ---
 
 
-
-\## Workflow
-
+## Workflow
 
 
-\### 1. Exploratory Data Analysis (`part1\_eda.ipynb`)
+### 1. Exploratory Data Analysis (`part1\_eda.ipynb`)
 
 
+- Analyzed class distribution
 
-\- Analyzed class distribution
+- Examined article length (characters and word counts)
 
-\- Examined article length (characters and word counts)
-
-\- Reviewed sample articles for each category
-
+- Reviewed sample articles for each category
 
 
 ---
 
 
-
-\### 2. Text Preprocessing (`part2\_preprocessing.ipynb`)
-
+### 2. Text Preprocessing (`part2\_preprocessing.ipynb`)
 
 
-\- Performed stratified train-test split
+- Performed stratified train-test split
 
-\- Applied TF-IDF vectorization with:
+- Applied TF-IDF vectorization with:
 
 &nbsp; - Stop-word removal
 
@@ -130,15 +121,13 @@ nlp\_bbc\_news/
 
 &nbsp; - Frequency thresholds to reduce noise
 
-\- Saved the vectorizer for reuse during inference
-
+- Saved the vectorizer for reuse during inference
 
 
 ---
 
 
-
-\### 3. Modeling and Evaluation (`part3\_modeling.ipynb`)
+### 3. Modeling and Evaluation (`part3\_modeling.ipynb`)
 
 
 
@@ -146,32 +135,24 @@ Models trained and compared:
 
 
 
-\- \*\*Logistic Regression (TF-IDF)\*\*
+- \*\*Logistic Regression (TF-IDF)\*\*
 
-\- \*\*Linear Support Vector Machine (TF-IDF)\*\*
-
+- \*\*Linear Support Vector Machine (TF-IDF)\*\*
 
 
 Evaluation metrics included:
 
+- Accuracy
 
+- \*\*Macro-F1\*\*
 
-\- Accuracy
+- Confusion Matrix
 
-\- \*\*Macro-F1\*\*
-
-\- Confusion Matrix
-
-\- Classification Report
-
-
+- Classification Report
 
 ---
 
-
-
-\## Results (Test Set)
-
+## Results (Test Set)
 
 
 | Model | Accuracy | Macro-F1 |
@@ -184,24 +165,16 @@ Evaluation metrics included:
 
 
 
-\*\*Selected Model:\*\* Linear SVM (TF-IDF) based on superior Macro-F1 performance.
-
-
+*\*Selected Model:\*\* Linear SVM (TF-IDF) based on superior Macro-F1 performance.
 
 ---
 
-
-
-\## Batch Inference (CLI)
-
-
+## Batch Inference (CLI)
 
 The project includes a command-line script to generate predictions on new text data using the saved model pipeline.
 
 
-
-\### Run from repository root
-
+### Run from repository root
 
 
 ```bash
@@ -216,85 +189,66 @@ python ml\_projects/nlp\_bbc\_news/predict.py \\
 
 ```
 
-
-
 ---
 
+### Output
 
-
-\### Output
-
-
-
-\- CSV file containing an additional column:
+- CSV file containing an additional column:
 
 &nbsp; - \*\*predicted\_category\*\*
 
+---
+
+## Technologies Used
+
+
+- \*\*Python 3.12\*\*
+
+- \*\*pandas\*\*
+
+- \*\*scikit-learn\*\*
+
+- \*\*TF-IDF Vectorization\*\*
+
+- \*\*Linear Support Vector Machine\*\*
+
+- \*\*joblib\*\*
+
+- \*\*Jupyter Notebooks\*\*
+
+- \*\*Git / GitHub\*\*
 
 
 ---
 
 
-
-\## Technologies Used
-
+## What This Project Demonstrates
 
 
-\- \*\*Python 3.12\*\*
 
-\- \*\*pandas\*\*
+- NLP preprocessing and feature extraction
 
-\- \*\*scikit-learn\*\*
+- Model comparison using appropriate metrics for multi-class classification
 
-\- \*\*TF-IDF Vectorization\*\*
+- End-to-end ML pipeline design
 
-\- \*\*Linear Support Vector Machine\*\*
+- Model persistence and reproducible inference
 
-\- \*\*joblib\*\*
-
-\- \*\*Jupyter Notebooks\*\*
-
-\- \*\*Git / GitHub\*\*
-
+- Clean, production-oriented project organization
 
 
 ---
 
 
-
-\## What This Project Demonstrates
-
+## Future Improvements
 
 
-\- NLP preprocessing and feature extraction
+- Hyperparameter tuning
 
-\- Model comparison using appropriate metrics for multi-class classification
+- Confidence-based prediction filtering
 
-\- End-to-end ML pipeline design
+- Model explainability (top contributing n-grams)
 
-\- Model persistence and reproducible inference
-
-\- Clean, production-oriented project organization
-
-
+- REST API for real-time inference
 
 ---
-
-
-
-\## Future Improvements
-
-
-
-\- Hyperparameter tuning
-
-\- Confidence-based prediction filtering
-
-\- Model explainability (top contributing n-grams)
-
-\- REST API for real-time inference
-
-
-
----
-
